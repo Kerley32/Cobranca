@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!--data-keyboard="false" data-backdrop="static" //para nao sair com esc cou clicar fora  -->
+<div class="modal fade" id="confirmacaExclusaoModal" tabindex="-1"
+	data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<!--  no form enviado metodo POST mesmo -->
+		<form th:attr="data-url-base=@{/titulos}" method="POST">
+			<!-- Incluido input para mapear metodo DELETE fora do form (no form causa problemas) -->
+			<input type="hidden" name="_method" value="DELETE" />
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Você tem certeza?</h4>
+				</div>
+
+				<div class="modal-body">
+					<span>Tem ceterza que deseja apagar o titulo?</span>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-primary">Excluir</button>
+				</div>
+			</div>
+		</form>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+</html>
