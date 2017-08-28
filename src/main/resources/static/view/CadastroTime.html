@@ -1,0 +1,126 @@
+<div class="container">
+
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<div class="clearfix">
+				<h1 class="panel-title aw-titulo-panel">Monte seu time</h1>
+			</div>
+		</div>
+		<div class="panel-body">
+			<label for="nome" class="col-sm-2 control-label">Nome do Time</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="nome"
+					ng-model="time.nome" />
+			</div>
+			<div class="form-group">
+				<label for="treinador" class="col-sm-2 control-label">Treinador</label>
+				<div class="col-sm-4">
+					<select class="form-control" name="treinador"
+						ng-model="time.treinador.id">
+						<option ng-repeat="coach in treinadores" value="{{coach.id}}">{{coach.nome}}</option>
+
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<div class="clearfix">
+				<h1 class="panel-title aw-titulo-panel">Escolha até 6 Pokemons</h1>
+			</div>
+		</div>
+		<div class="panel-body">
+			<!--
+				<div class="col-sm-6">
+					<div ng-repeat="poke in pokemons.results">
+						<input ng-model="pokemon[pokemon.id]" type="checkbox"
+							id="pokemon-" /> <label for="pokemon-">{{poke.name}}</label>
+						  button ng-model="pokemon" class="btn btn-success"
+							ng-click="adicionaItem(pokemon)">Escolher</button>
+
+					</div>
+				</div>
+			</div>
+			-->
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<div>
+								<input class="form-control" type="text"
+									ng-model="criterioDeBusca"
+									placeholder="Qual Pokemon você está procurando?" />
+							</div>
+						</div>
+					</div>
+					<br />
+
+					<table class="table table-bordered table-striped"
+						style="margin-top: 10px">
+						<thead>
+							<tr>
+								<th class="text-center col-md-1">Pokemon</th>
+								<th class="text-center col-md-1">#</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="poke in pokemons | filter:criterioDeBusca ">
+								<td class="text-center">{{poke.name | uppercase}}</td>
+								<td class="text-center"><input type="checkbox" name=""
+									ng-model="selected" ng-checked="exist(poke)"
+									ng-click="toggleSelection(poke)" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<div class="clearfix">
+								<h1 class="panel-title aw-titulo-panel">Pokemons
+									Selecionados</h1>
+							</div>
+						</div>
+						<div class="panel-body">
+							<p ng-repeat="selectedName in selected">{{selectedName.id }}-
+								{{selectedName.name| uppercase}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<button class="btn btn-success" ng-click="salvarTime()">Salvar</button>
+			<button class="btn btn-primary" ng-click="cancelarAlteracaoTime()">Cancelar</button>
+		</div>
+	</div>
+
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th class="text-center col-md-1">#</th>
+				<th>Time</th>
+				<th>Treinador</th>
+
+				<th class="col-md-1"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="ti in times">
+				<td class="text-center">{{ti.id}}</td>
+				<td>{{ti.nome | uppercase}}</td>
+				<td>{{ti.treinador.nome | uppercase}}</td>
+				<td><a class="btn bt-link btn-xs" href="#!/time"
+					ng-click="excluirTime(ti)" title="Excluir" rel="tooltip"
+					data-placement="top"> <span class="glyphicon glyphicon-remove"></span>
+				</a> <a class="btn bt-link btn-xs" href="#!/time"
+					ng-click="alterarTime(ti)" title="Editar" rel="tooltip"
+					data-placement="top"><span class="glyphicon glyphicon-pencil"></span>
+				</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>

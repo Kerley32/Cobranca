@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+
+
+	<div class="panel-body">
+		<!-- Inclue o codigo como campo oculto para utilizar no controler para atualizacao -->
+		<div class="form-group">
+			<label for="nome" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-4">
+				<!-- th:field substitue o "name" e a expressão * mantem os dados no formulario em caso de retorno  -->
+				<input type="text" class="form-control" ng-model="pokemon.abilities" />
+			</div>
+		</div>
+
+	</div>
+	<div ng-repeat="ti in pokemons.results">
+		{{ti.name}}
+		<button class="btn btn-primary" ng-click="alterarTime(ti)">Incluir
+		</button>
+
+
+	</div>
+
+	<div ng-repeat="ti in pokemons.results">
+		<input type="checkbox">{{ti.name}}</input>
+	</div>
+</div>

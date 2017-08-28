@@ -1,0 +1,40 @@
+<div class="container">
+
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<div class="clearfix">
+				<h1 class="panel-title aw-titulo-panel">Habilidades Importadas</h1>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<table class="table table-bordered table-striped"
+						style="margin-top: 10px">
+						<thead>
+							<tr>
+								<th class="text-center col-md-1">Habilidade</th>
+								<th class="text-center col-md-1">#</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr
+								ng-repeat="move in habilidades.results | filter:criterioDeBusca ">
+								<td class="text-center" ng-model="habilidade.nome">{{move.name
+									| uppercase}}</td>
+								<td class="text-center"><input type="checkbox" name=""
+									ng-model="selected" ng-checked="exist(move)"
+									ng-click="toggleSelection(move)" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<button class="btn btn-success" ng-click="salvarHabilidade()">Atualizar</button>
+		</div>
+	</div>
+
+
+</div>

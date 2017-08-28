@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	ng-app="appPokemon">
+<head>
+<meta charset="UTF-8" />
+<title>::Pokemon::</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<!-- Nao esta funcionando com a versao 3.2.1 do JQuery-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap-datepicker.standalone.min.css}" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js">
+	
+</script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js">
+	
+</script>
+<script src="./js/app.js"></script>
+<script src="./js/controller/timeController.js"></script>
+<script src="./js/controller/loginController.js"></script>
+<script src="./js/controller/treinadorController.js"></script>
+<script src="./js/controller/pokemonController.js"></script>
+<script src="./js/controller/habilidadeController.js"></script>
+</head>
+<body>
+	<header layout:include="Cabecalho"></header>
+	<section>
+		<article ng-view="ng-view"></article>
+
+	</section>
+
+	<script th:src="@{/js/jquery-2.1.4.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+	<script th:src="@{/js/bootstrap-datepicker.pt-BR.min.js}"></script>
+</body>
+
+</html>

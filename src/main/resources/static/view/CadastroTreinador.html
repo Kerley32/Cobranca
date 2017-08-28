@@ -1,0 +1,65 @@
+<div class="container">
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<div class="clearfix">
+				<h1 class="panel-title aw-titulo-panel">Cadastro Treinador</h1>
+			</div>
+		</div>
+
+		<div class="panel-body">
+			<div class="form-group">
+				<label for="nome" class="col-sm-2 control-label">Nome</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="nome"
+						ng-model="treinador.nome" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="email" class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="email"
+						ng-model="treinador.email" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="senha" class="col-sm-2 control-label">Senha</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="senha"
+						ng-model="treinador.senha" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button class="btn btn-success" ng-click="salvarTreinador()">Salvar</button>
+				</div>
+			</div>
+		</div>
+
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th class="text-center col-md-1">#</th>
+					<th>Nome</th>
+					<th>Email</th>
+
+					<th class="col-md-1"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="coach in treinadores">
+					<td class="text-center">{{coach.id}}</td>
+					<td>{{coach.nome | uppercase}}</td>
+					<td>{{coach.email}}</td>
+					<td><a class="btn bt-link btn-xs" href="#!/treinadores"
+						ng-click="excluirTreinador(coach)" title="Excluir" rel="tooltip"
+						data-placement="top"> <span class="glyphicon glyphicon-remove"></span>
+					</a> <a class="btn bt-link btn-xs" href="#!/treinadores"
+						ng-click="alterarTreinador(coach)" title="Editar" rel="tooltip"
+						data-placement="top"><span class="glyphicon glyphicon-pencil"></span>
+					</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>

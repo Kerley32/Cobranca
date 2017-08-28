@@ -3,14 +3,18 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<nav class="navbar navbar-inverse navbar-static-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#"> <img alt="Aplicação"
-				th:src="@{/images/brasil1.png}" width="55px" height="35px" />
-			</a>
+<nav class="navbar navbar-inverse bg-primary">
+	<div class="container">
+		<div href="#">
+			<img alt="Aplicação" th:src="@{/images/brasil1.png}" width="55px"
+				height="35px" /> <a class="nav-link" href="#!/treinadores">Treinador</a>
+			<a class="nav-link" href="#!/time">Time</a> <a class="nav-link"
+				href="#!/pesquisaTimes">Pesquisa Times</a> <a class="nav-link"
+				href="#!/pokemon">Importar Pokemons</a> <a class="nav-link"
+				href="#!/habilidade">Importar Habilidades</a> <a class="nav-link"
+				href="#!/login">Login</a>
+
 		</div>
 	</div>
 </nav>
-
 </html>
